@@ -7,6 +7,79 @@
     <title>Weather</title>
 </head>
 <body>
+    <div class="maincontainer">
+        <div class="box1">
+            <div class="left">
+                <div class="searchbox">
+                    <input type="text" name="search" id="search" class="search" placeholder="Search city" autocomplete="off">
+                    <button onclick="getData()">Search</button>
+                </div>
+                <img src="/assets/rain.png" alt="weather" class="icon" id="icon">
+                <p class="temp" id="temp"><span class="tempvalue" id="tempvalue">-</span>°C</p>
+                <p class="desc" id="desc">Condition</p>
+                <hr class="line">
+                <p class="date" id="date"><span id="day">Day</span> <span id="month">Month</span> <span id="year">Year</span></p>
+                <p class="dayandtime" id="dayandtime"><span id="dayname">Day name</span>, <span id="time">Time</span></p>
+                <p class="time" id="timeoftheday">Day</p>
+                <p class="location" id="location">Location</p>
+            </div>
+        </div>
+
+        <div class="box2">
+            <p class="title">Today</p>
+            <div class="gridbox">
+
+                <div class="box" id="wind">
+                    <p class="head">Wind</p>
+                    <p class="body" id="winddata">-</p>
+                    <p class="body" id="windresult">-</p>
+                </div>
+                
+                <div class="box" id="humidity">
+                    <p class="head">Humidity</p>
+                    <p class="body" id="humiditydata">-</p>
+                </div>
+
+                <div class="box" id="realtemp">
+                    <p class="head">Feels Like</p>
+                    <p class="body" id="feeldata">-</p>
+                </div>
+                
+                <div class="box" id="visiblity">
+                    <p class="head">Visiblity</p>
+                    <p class="body" id="visiblitydata">-</p>
+                    <p class="body" id="visiblityresult">-</p>
+                </div>
+                <div class="box" id="pressure">
+                    <p class="head">Pressure</p>
+                    <p class="body" id="pressuredata">-</p>
+                </div>
+                
+                <div class="box" id="cloudiness">
+                    <p class="head">Cloudiness</p>
+                    <p class="body" id="clouddata">-</p>
+                </div>
+                
+                <div class="box" id="range">
+                    <p class="head">Temperature Range</p>
+                    <p class="body"><span class="subhead">Max</span> <span id="maxtemp" class="value">-</span></p>
+                    <p class="body"><span class="subhead">Min</span> <span id="mintemp" class="value">-</span></p>
+                </div>
+                
+                <div class="box" id="sun">
+                    <p class="head">Sunrise & Sunset</p>
+                    <p class="body"><span class="subhead">Sunrise</span> <span id="sunrise" class="value">-</span></p>
+                    <p class="body"><span class="subhead">Sunset</span> <span id="sunset" class="value">-</span></p>
+                </div>
+                
+                <div class="box" id="dew">
+                    <p class="head">Dew point</p>
+                    <p class="body" id="dewpoint">-</p>
+                </div>
+            </div>
+            <p class="info">Data provided by <a href="https://openweathermap.org/" target="_blank">openweathermap</a></p>
+        </div>
+    </div>
     
     <script src="script.js"></script>
 </body>
