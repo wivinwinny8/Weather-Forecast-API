@@ -34,6 +34,9 @@ function setValue(result){
     document.getElementById("desc").textContent= result.weather[0].description;
     updateTimeData(result.timezone);
 
+    //SETTING ICON VALUES
+    setIcon(result.timezone,result.weather[0].main);
+
     //SETTING VALUES OF RIGHT BOX
 
     //SETTING VALUE OF WIND 
@@ -126,6 +129,9 @@ function updateTime(tz){
     else if(date.getHours()>=19&&date.getHours()<6){
         document.getElementById("timeoftheday").textContent = "Night";
     }
+    else{
+        document.getElementById("timeoftheday").textContent = "Night";
+    }
 
 }
 
@@ -193,4 +199,66 @@ function setSunRiseAndSunSet(unixTimestamp, timezoneOffset) {
     const offsetTimestamp = (unixTimestamp + (clientOffset * 60) + timezoneOffset)
     var date = new Date(offsetTimestamp * 1000);
     return date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+}
+
+function setIcon(tz,condition){
+    const icon=document.getElementById("icon");
+    d = new Date()
+    localTime = d.getTime()
+    localOffset = d.getTimezoneOffset() * 60000
+    utc = localTime + localOffset
+    var atlanta = utc + (1000 * tz)
+    date = new Date(atlanta)
+    hour=date.getHours();
+    if(hour>=6&&hour<=18){
+        switch(condition){
+            case "Rain":
+                icon.load("/animations/rain-day.json");
+                break;
+            case "Clear":
+                icon.load("/animations/clear-day.json");
+                break;
+            case "Clouds":
+                icon.load("/animations/clouds-day.json");
+                break;
+            case "Snow":
+                icon.load("/animations/snow-day.json");
+                break;
+            case "Drizzle":
+                icon.load("/animations/drizzle-day.json");
+                break;
+            case "Thunderstorm":
+                icon.load("/animations/thunderstorm-day.json");
+                break;
+            default:
+                icon.load("/animations/other-day.json")
+                break;
+        }
+    }
+    else{
+        switch(condition){
+            case "Rain":
+                icon.load("/animations/rain-night.json");
+                break;
+            case "Clear":
+                icon.load("/animations/clear-night.json");
+                break;
+            case "Clouds":
+                icon.load("/animations/clouds-night.json");
+                break;
+            case "Snow":
+                icon.load("/animations/snow-night.json");
+                break;
+            case "Drizzle":
+                icon.load("/animations/drizzle-night.json");
+                break;
+            case "Thunderstorm":
+                icon.load("/animations/thunderstorm-night.json");
+                break;
+            default:
+                icon.load("/animations/other-night.json")
+                break;
+        }
+    }
+
 }
