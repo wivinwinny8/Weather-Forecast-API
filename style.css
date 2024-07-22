@@ -45,6 +45,7 @@ body{
     align-items: center;
 }
 
+
 .searchbox{
     display: flex;
     flex-direction: row;
@@ -229,3 +230,6 @@ body{
 .info a{
     color: #3f65ffac;
 }
+
+
+/* FIXED */
