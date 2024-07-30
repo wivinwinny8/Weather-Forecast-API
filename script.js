@@ -1,5 +1,13 @@
 const API="599133752e2b213d6e6797efa3ff0f1a";
 var intervalId=0;
+
+const search=document.getElementById("search");
+search.addEventListener("keydown",(event)=>{
+    if(event.key=='Enter'){
+        getData();
+    }
+});
+
 async function getData(){
     clearInterval(intervalId);
     try{
