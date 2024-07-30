@@ -28,7 +28,7 @@ How to Use:
 
 1. Clone the repository to your local machine.
 2. Open the `index.html` file in a web browser.
-3. Enter a city name in the search bar and press Search.
+3. Enter a city name in the search bar and press Search or press Enter on your keyboard.
 
 Note:
 
